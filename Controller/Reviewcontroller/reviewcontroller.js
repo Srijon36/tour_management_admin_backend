@@ -1,5 +1,6 @@
 const Review = require("../../Model/Review/review");
 
+/* ---------------------- CREATE ---------------------- */
 // Create a new review
 exports.createReview = async (req, res) => {
   try {
@@ -11,6 +12,7 @@ exports.createReview = async (req, res) => {
   }
 };
 
+/* ---------------------- READ ---------------------- */
 // Get all reviews
 exports.getAllReviews = async (req, res) => {
   try {
@@ -18,6 +20,18 @@ exports.getAllReviews = async (req, res) => {
     res.status(200).json(reviews);
   } catch (err) {
     res.status(500).json({ error: err.message });
+  }
+};
+
+// Get review by ID
+exports.getReviewById = async (req, res) => {
+  try {
+    const review = await Review.findById(req.params.id);
+    if (!review)
+      return res.status(404).json({ message: "Review not found" });
+    res.status(200).json(review);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
   }
 };
 
@@ -33,6 +47,7 @@ exports.getReviewsByType = async (req, res) => {
   }
 };
 
+/* ---------------------- UPDATE ---------------------- */
 // Update review
 exports.updateReview = async (req, res) => {
   try {
@@ -45,6 +60,7 @@ exports.updateReview = async (req, res) => {
   }
 };
 
+/* ---------------------- DELETE ---------------------- */
 // Delete review
 exports.deleteReview = async (req, res) => {
   try {
