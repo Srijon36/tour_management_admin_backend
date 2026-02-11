@@ -3,6 +3,8 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 
 // Import route files
+const registerRotes = require("./routes/registerroute/registerRouter");
+const loginRotes = require("./routes/loginroute/loginRoute");
 const userRoutes = require("./routes/userroute/userRoute");
 const hotelRoutes = require("./routes/hotelroute/hotelRoute");
 const bookingRoutes = require("./routes/bookingroute/bookingRoute");
@@ -24,6 +26,8 @@ app.get("/", (req, res) => {
 });
 
 // Mount routes
+app.use("/api/registers",registerRotes);
+app.use("/api/logins",loginRotes);
 app.use("/api/users", userRoutes);
 app.use("/api/hotels", hotelRoutes);
 app.use("/api/bookings", bookingRoutes);

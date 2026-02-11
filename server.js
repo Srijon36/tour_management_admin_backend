@@ -14,6 +14,9 @@ mongoose.connect(process.env.MONGO_URI)
 
 // Routes
 
+const registerRoutes = require("./routes/registerroute/registerRouter");
+const { createDefaultAdmin } = require("./Controller/Registercontroller/registercontroller");
+const loginRoutes = require("./routes/loginroute/loginRoute");
 const bookingRoutes = require("./routes/bookingroute/bookingRoute");
 const hotelRoutes =require("./routes/hotelroute/hotelRoute");
 const roomRoutes = require("./routes/roomroute/roomRoute")
@@ -22,6 +25,8 @@ const reviewRoutes = require("./routes/reviewroute/reviewRoute");
 const tourPackageRoutes = require("./routes/tourPackageroute/tourPackageRoute");
 
 
+app.use("/api/registers", registerRoutes);
+app.use("/api/logins", loginRoutes);
 app.use("/api/bookings",bookingRoutes);
 app.use("/api/users",userRoutes);
 app.use("/api/hotels",hotelRoutes);
