@@ -25,11 +25,12 @@ exports.gethotel =async(req, res) => {
 exports.updatehotel =async(req, res) => {
     try {
        const hotel =await Hotel.findByIdAndUpdate(req.params.id, req.body,{ new: true});
-       if(!Hotel) {
+       if(!hotel) {
         return res.status(404).json({error:" Hotel not Found"}); }
         res.json(hotel);
     } catch (error) {
-        res.status(400).json({ error: err.message });
+        res.status(400).json({ error: error.message });
+
     }
 };
 

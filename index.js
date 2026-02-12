@@ -5,8 +5,8 @@ const connectDB = require("./config/db");
 // Import route files
 const registerRotes = require("./routes/registerroute/registerRouter");
 const loginRotes = require("./routes/loginroute/loginRoute");
-const userRoutes = require("./routes/userroute/userRoute");
-const hotelRoutes = require("./routes/hotelroute/hotelRoute");
+//const userRoutes = require("./routes/userroute/userRoute");
+const hotelRoute = require("./routes/hotelroute/hotelroute");
 const bookingRoutes = require("./routes/bookingroute/bookingRoute");
 const roomRoutes = require("./routes/roomroute/roomRoute");
 const reviewRoutes = require("./routes/reviewroute/reviewRoute");
@@ -28,8 +28,8 @@ app.get("/", (req, res) => {
 // Mount routes
 app.use("/api/registers",registerRotes);
 app.use("/api/logins",loginRotes);
-app.use("/api/users", userRoutes);
-app.use("/api/hotels", hotelRoutes);
+//app.use("/api/users", userRoutes);
+app.use("/api/hotel", hotelRoute);
 app.use("/api/bookings", bookingRoutes);
 app.use("/api/rooms",roomRoutes);
 app.use("/api/reviews",reviewRoutes);

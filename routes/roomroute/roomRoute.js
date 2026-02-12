@@ -3,7 +3,7 @@ const router = express.Router();
 const roomController = require("../../Controller/Roomcontroller/roomcontroller");
 
 // create a new room
-router.post("/createroom",roomController.createroom);
+router.post("/createroom", roomController.createroom);
 
 // get all rooms
 router.get("/getroom",roomController.getroom);
