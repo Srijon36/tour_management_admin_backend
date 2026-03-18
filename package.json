@@ -10,12 +10,14 @@
   "description": "",
   "dependencies": {
     "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",
     "dotenv": "^17.2.4",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^8.19.1",
     "uuid": "^13.0.0",
+    "uuid4": "^2.0.3",
     "uuidv4": "^6.2.13"
   },
   "devDependencies": {
